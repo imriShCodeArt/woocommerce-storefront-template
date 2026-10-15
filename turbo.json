@@ -1,0 +1,54 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "remoteCache": {
+    "enabled": true
+  },
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_*",
+        "NEXT_PUBLIC_ANALYTICS_TRANSPORT",
+        "WOOCOMMERCE_CONSUMER_KEY",
+        "WOOCOMMERCE_CONSUMER_SECRET",
+        "RESEND_API_KEY",
+        "CONTACT_FROM_EMAIL",
+        "CONTACT_TO_EMAIL"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {},
+    "typecheck": {},
+    "format": {
+      "cache": false
+    },
+    "format:check": {},
+    "test": {},
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "test:coverage": {},
+    "vercel-build": {
+      "cache": false,
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_*",
+        "NEXT_PUBLIC_ANALYTICS_TRANSPORT",
+        "WOOCOMMERCE_CONSUMER_KEY",
+        "WOOCOMMERCE_CONSUMER_SECRET",
+        "RESEND_API_KEY",
+        "CONTACT_FROM_EMAIL",
+        "CONTACT_TO_EMAIL"
+      ]
+    }
+  }
+}
